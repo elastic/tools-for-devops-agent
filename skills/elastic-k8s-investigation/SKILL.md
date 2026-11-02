@@ -480,10 +480,10 @@ recurrent.
 
 ## Operations
 
-| HTTP API (shorthand)                | `elastic` CLI command                                             |
-| ----------------------------------- | ----------------------------------------------------------------- |
-| `GET /`                             | `elastic es info`                                                 |
-| `POST /_query`                      | `elastic es esql query --format tsv --query '<esql>'`             |
-| `GET /<index>/_mapping`             | `elastic es indices get-mapping --index '<index>'`                |
-| `GET /_field_caps`                  | `elastic es field-caps --index '<index>' --fields '<fields>'`     |
-| `GET kbn:/api/alerting/rules/_find` | `elastic kb alerting get-alerting-rules-find --filter '<filter>'` |
+| HTTP API (shorthand)                |
+| ----------------------------------- |
+| `GET /`                             |
+| `POST /_query`                      |
+| `GET /<index>/_mapping`             |
+| `GET /_field_caps`                  |
+| `GET kbn:/api/alerting/rules/_find` |

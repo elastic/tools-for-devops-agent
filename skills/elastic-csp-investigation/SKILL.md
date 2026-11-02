@@ -47,12 +47,12 @@ check and why instead of calling the HTTP API another way.
 
 ### Analysis without cluster access
 
-The CLI check above gates _querying the cluster_ — it does not gate analysis. When the user has already supplied the
+Connected Elastic tools gate _querying the cluster_ — they do not gate analysis. When the user has already supplied the
 evidence in their question (metric values, alert payloads, log lines, dimension names), reason from that evidence and
 deliver the conclusion.
 
 When you genuinely do need data the user has not provided, still say what you would check and how — name the specific
-query, index, and field that would settle the question — and then ask for CLI setup. An answer that names the check is
+query, index, and field that would settle the question — and then ask for cluster access. An answer that names the check is
 useful without a cluster; one that only asks for setup is not.
 
 Every ES|QL query in this skill and in the provider references runs via `POST /_query`. Discovering which data streams
@@ -215,12 +215,12 @@ constructing a cause from ambient fluctuation.
 
 ## Operations
 
-| HTTP API (shorthand)                | `elastic` CLI command                                                  |
-| ----------------------------------- | ---------------------------------------------------------------------- |
-| `GET /`                             | `elastic es info`                                                      |
-| `POST /_query`                      | `elastic es esql query --format tsv --query '<esql>'`                  |
-| `GET /_resolve/index/<pattern>`     | `elastic es indices resolve-index --name '<pattern>'`                  |
-| `GET /<index>/_mapping`             | `elastic es indices get-mapping --index '<index>'`                     |
-| `GET /_field_caps`                  | `elastic es field-caps --index '<index>' --fields '<fields>'`          |
-| `GET kbn:/api/alerting/rules/_find` | `elastic kb alerting get-alerting-rules-find --filter '<filter>'`      |
-| `GET kbn:/api/observability/slos`   | `elastic kb slo find-slos-op --space-id '<space>' --kql-query '<kql>'` |
+| HTTP API (shorthand)                |
+| ----------------------------------- |
+| `GET /`                             |
+| `POST /_query`                      |
+| `GET /_resolve/index/<pattern>`     |
+| `GET /<index>/_mapping`             |
+| `GET /_field_caps`                  |
+| `GET kbn:/api/alerting/rules/_find` |
+| `GET kbn:/api/observability/slos`   |

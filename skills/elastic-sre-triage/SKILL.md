@@ -330,19 +330,19 @@ too tight.
 
 ## Operations
 
-| HTTP API (shorthand)                                        | `elastic` CLI command                                                                                                              |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `GET /`                                                     | `elastic es info`                                                                                                                  |
-| `POST /_query`                                              | `elastic es esql query --format tsv --query '<esql>'`                                                                              |
-| `GET /_resolve/index/{pattern}`                             | `elastic es indices resolve-index --name '<pattern>'`                                                                              |
-| `GET /_ml/anomaly_detectors`                                | `elastic es ml get-jobs`                                                                                                           |
-| `GET /_ml/anomaly_detectors/_stats`                         | `elastic es ml get-job-stats`                                                                                                      |
-| `GET /_ml/anomaly_detectors/{id}/results/records`           | `elastic es ml get-records --job-id '<id>'`                                                                                        |
-| `GET kbn:/api/observability/slos`                           | `elastic kb slo find-slos-op --space-id '<space>' --kql-query '<kql>'`                                                             |
-| `GET kbn:/api/observability/slos/{id}`                      | `elastic kb slo get-slo-op --space-id '<space>' --slo-id '<id>'`                                                                   |
-| `GET kbn:/api/alerting/rules/_find`                         | `elastic kb alerting get-alerting-rules-find --filter '<filter>'`                                                                  |
-| `GET kbn:/api/alerting/rule/{id}`                           | `elastic kb alerting get-alerting-rule-id --id '<id>'`                                                                             |
-| `GET kbn:/api/apm/services/{serviceName}/annotation/search` | `elastic kb apm-annotations get-annotation --service-name '<service>' --environment '<env>' --start '<iso8601>' --end '<iso8601>'` |
+| HTTP API (shorthand)                                        |
+| ----------------------------------------------------------- |
+| `GET /`                                                     |
+| `POST /_query`                                              |
+| `GET /_resolve/index/{pattern}`                             |
+| `GET /_ml/anomaly_detectors`                                |
+| `GET /_ml/anomaly_detectors/_stats`                         |
+| `GET /_ml/anomaly_detectors/{id}/results/records`           |
+| `GET kbn:/api/observability/slos`                           |
+| `GET kbn:/api/observability/slos/{id}`                      |
+| `GET kbn:/api/alerting/rules/_find`                         |
+| `GET kbn:/api/alerting/rule/{id}`                           |
+| `GET kbn:/api/apm/services/{serviceName}/annotation/search` |
 
 The SLO find command takes a KQL query string because that is the API's contract; it is not an exception to the ES|QL
 rule for data queries.

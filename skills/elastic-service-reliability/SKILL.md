@@ -457,33 +457,26 @@ the threshold to a ticket, and verify no slow-burn window is routed to the pagin
 
 ## Operations
 
-| HTTP API (shorthand)                                | `elastic` CLI command                                                                         |
-| --------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `POST /_query`                                      | `elastic es esql query --format tsv --query '<esql>'`                                         |
-| `GET /_resolve/index/<pattern>`                     | `elastic es indices resolve-index --name '<pattern>'`                                         |
-| `GET /<index>/_mapping`                             | `elastic es indices get-mapping --index '<index>'`                                            |
-| `GET /_field_caps`                                  | `elastic es field-caps --index '<index>' --fields '<fields>'`                                 |
-| `GET /_ml/anomaly_detectors`                        | `elastic es ml get-jobs`                                                                      |
-| `GET kbn:/api/observability/slos`                   | `elastic kb slo find-slos-op --space-id '<space>' --kql-query '<kql>'`                        |
-| `POST kbn:/api/observability/slos`                  | `elastic kb slo create-slo-op --space-id '<space>' --input-file <json>`                       |
-| `GET kbn:/api/observability/slos/{id}`              | `elastic kb slo get-slo-op --space-id '<space>' --slo-id '<id>'`                              |
-| `PUT kbn:/api/observability/slos/{id}`              | `elastic kb slo update-slo-op --space-id '<space>' --slo-id '<id>' --input-file <json>`       |
-| `DELETE kbn:/api/observability/slos/{id}`           | `elastic kb slo delete-slo-op --space-id '<space>' --slo-id '<id>'`                           |
-| `POST kbn:/api/observability/slos/{id}/_reset`      | `elastic kb slo reset-slo-op --space-id '<space>' --slo-id '<id>'`                            |
-| `POST kbn:/api/observability/slos/{id}/enable`      | `elastic kb slo enable-slo-op --space-id '<space>' --slo-id '<id>'`                           |
-| `POST kbn:/api/observability/slos/{id}/disable`     | `elastic kb slo disable-slo-op --space-id '<space>' --slo-id '<id>'`                          |
-| `GET kbn:/api/observability/slos/_definitions`      | `elastic kb slo get-definitions-op --space-id '<space>'`                                      |
-| `GET kbn:/api/alerting/rules/_find`                 | `elastic kb alerting get-alerting-rules-find --filter '<kql>'`                                |
-| `POST kbn:/api/alerting/rule/{id}`                  | `elastic kb alerting post-alerting-rule-id --id '<id>' --input-file <json>`                   |
-| `POST kbn:/api/alerting/rule/{id}/_snooze_schedule` | `elastic kb alerting post-alerting-rule-id-snooze-schedule --id '<id>' --input-file <json>`   |
-| `POST kbn:/api/alerting/rule/{id}/_disable`         | `elastic kb alerting post-alerting-rule-id-disable --id '<id>'`                               |
-| `POST kbn:/api/maintenance_window`                  | `elastic kb maintenance-window post-maintenance-window --title '<title>' --input-file <json>` |
-| `GET kbn:/api/synthetics/monitors`                  | _no CLI binding — see CLI gaps below_                                                         |
-| `POST kbn:/api/synthetics/monitors`                 | _no CLI binding — see CLI gaps below_                                                         |
-
-**CLI gaps.** As of `elastic` CLI 0.2.0 there is no binding for the Synthetics monitor management API — the `stack kb`
-namespace exposes no synthetics commands. The HTTP shorthand above is still the correct contract and remains portable,
-so keep using it when describing what must happen, but do not invent a CLI invocation for it. Create and edit monitors
-through the Synthetics app in Kibana, through a Synthetics project, or by calling the Kibana API directly from tooling
-that already holds credentials. Everything else in this skill, including the burn-rate rule and every SLO operation, has
-a working CLI binding.
+| HTTP API (shorthand)                                |
+| --------------------------------------------------- |
+| `POST /_query`                                      |
+| `GET /_resolve/index/<pattern>`                     |
+| `GET /<index>/_mapping`                             |
+| `GET /_field_caps`                                  |
+| `GET /_ml/anomaly_detectors`                        |
+| `GET kbn:/api/observability/slos`                   |
+| `POST kbn:/api/observability/slos`                  |
+| `GET kbn:/api/observability/slos/{id}`              |
+| `PUT kbn:/api/observability/slos/{id}`              |
+| `DELETE kbn:/api/observability/slos/{id}`           |
+| `POST kbn:/api/observability/slos/{id}/_reset`      |
+| `POST kbn:/api/observability/slos/{id}/enable`      |
+| `POST kbn:/api/observability/slos/{id}/disable`     |
+| `GET kbn:/api/observability/slos/_definitions`      |
+| `GET kbn:/api/alerting/rules/_find`                 |
+| `POST kbn:/api/alerting/rule/{id}`                  |
+| `POST kbn:/api/alerting/rule/{id}/_snooze_schedule` |
+| `POST kbn:/api/alerting/rule/{id}/_disable`         |
+| `POST kbn:/api/maintenance_window`                  |
+| `GET kbn:/api/synthetics/monitors`                  |
+| `POST kbn:/api/synthetics/monitors`                 |

@@ -48,12 +48,12 @@ check and why instead of calling the HTTP API another way.
 
 ### Analysis without cluster access
 
-The CLI check above gates _querying the cluster_ — it does not gate analysis. When the user has already supplied the
+Connected Elastic tools gate _querying the cluster_ — they do not gate analysis. When the user has already supplied the
 evidence in their question (metric values, counts, status reasons, log lines, alert payloads, configuration), reason
 from that evidence and deliver the conclusion.
 
 When you genuinely do need data the user has not provided, still say what you would check and how — name the specific
-query, index, and field that would settle the question — and then ask for CLI setup. An answer that names the check is
+query, index, and field that would settle the question — and then ask for cluster access. An answer that names the check is
 useful without a cluster; one that only asks for setup is not.
 
 Only the verification step in this skill talks to Elasticsearch; it runs through `POST /_query`. Everything else edits
@@ -240,8 +240,8 @@ step 1, which will show a traces data stream and nothing else, then remove the `
 
 ## Operations
 
-| HTTP API (shorthand)    | `elastic` CLI command                                 |
-| ----------------------- | ----------------------------------------------------- |
-| `GET /`                 | `elastic es info`                                     |
-| `POST /_query`          | `elastic es esql query --format tsv --query '<esql>'` |
-| `GET /<index>/_mapping` | `elastic es indices get-mapping --index '<index>'`    |
+| HTTP API (shorthand)    |
+| ----------------------- |
+| `GET /`                 |
+| `POST /_query`          |
+| `GET /<index>/_mapping` |

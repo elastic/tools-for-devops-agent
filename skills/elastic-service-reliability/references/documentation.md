@@ -41,7 +41,6 @@ confirmation.
 - [Synthetic monitoring](https://www.elastic.co/docs/solutions/observability/synthetics) — monitor types, locations, and
   scheduling.
 - [Synthetics API](https://www.elastic.co/docs/api/doc/kibana/group/endpoint-synthetics) — monitor management endpoints.
-  There is no `elastic` CLI binding for these as of CLI 0.2.0.
 
 ## Anomaly detection
 

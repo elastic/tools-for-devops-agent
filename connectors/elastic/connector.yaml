@@ -85,5 +85,6 @@ triggers:
 
 docs_url: https://www.elastic.co/docs/explore-analyze/ai-features/agent-builder/mcp-server
 support_url: https://www.elastic.co/support
+contact_email: support@elastic.co
 
 maintainers: ["Udayel"]

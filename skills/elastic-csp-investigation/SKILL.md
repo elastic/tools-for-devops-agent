@@ -58,8 +58,7 @@ useful without a cluster; one that only asks for setup is not.
 Every ES|QL query in this skill and in the provider references runs via `POST /_query`. Discovering which data streams
 and fields a deployment actually has uses `GET /_resolve/index/<pattern>` and `GET /_field_caps` (the way to learn
 whether a sparse counter has ever been mapped — see Guidelines). Active alerts are read with
-`GET kbn:/api/alerting/rules/_find`; shipped SLOs with `GET kbn:/api/observability/slos`. The [Operations](#operations)
-table maps each to its `elastic` CLI equivalent. Express predicates natively in ES|QL; do not use Query DSL or the `KQL`
+`GET kbn:/api/alerting/rules/_find`; shipped SLOs with `GET kbn:/api/observability/slos`. Express predicates natively in ES|QL; do not use Query DSL or the `KQL`
 function.
 
 ## Router — read the provider reference first

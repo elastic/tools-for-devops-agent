@@ -55,7 +55,7 @@ evidence in their question (metric values, counts, status reasons, log lines, al
 from that evidence and deliver the conclusion.
 
 When you genuinely do need data the user has not provided, still say what you would check and how — name the specific
-query, index, and field that would settle the question — and then ask for CLI setup. An answer that names the check is
+query, index, and field that would settle the question — and then ask for cluster access. An answer that names the check is
 useful without a cluster; one that only asks for setup is not.
 
 SLO and alerting operations run against Kibana and use the `kbn:` prefix (for example,

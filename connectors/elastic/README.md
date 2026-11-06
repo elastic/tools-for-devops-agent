@@ -1,6 +1,6 @@
 # Set up Elastic for AWS DevOps Agent
 
-Connect AWS DevOps Agent to your Elastic data through the **Elastic Agent Builder MCP server**. Before connecting, select or deploy Elastic, copy your MCP URL, and create an API key. To start investigations automatically from Elastic alerts, also complete step 4.
+Connect AWS DevOps Agent to your Elastic data through the **Elastic Agent Builder MCP server**. Before connecting, select or deploy Elastic, copy your MCP URL, and create an API key. To start investigations automatically from Elastic alerts, also complete sections 4 and 5.
 
 ## 1. Deploy or select your Elastic environment
 
@@ -77,7 +77,7 @@ Create the key inside the deployment or project you are connecting.
 5. Replace the index patterns with the data the agent should investigate. For a custom space, replace `space:default` with `space:<space-id>`.
 6. Create the key and securely copy its **encoded** value. It is shown only once.
 
-This descriptor supports the basic index-query tools listed in step 4. Tools that use Elasticsearch inference endpoints additionally need `monitor_inference`; tools using Kibana connectors need `feature_actions.read`. Add privileges only for the tools you enable.
+This descriptor supports the basic index-query tools. Tools that use Elasticsearch inference endpoints additionally need `monitor_inference`; tools using Kibana connectors need `feature_actions.read`. Add privileges only for the tools you enable.
 
 Elastic expects this HTTP header:
 
@@ -231,7 +231,7 @@ Add an HTTP action to the workflow. Use the configured Webhook connector ID inst
       title: "{{ steps.fetch_case.output.case.title }}"
       description: "{{ steps.fetch_case.output.case.description }}"
       timestamp: "{{ steps.fetch_case.output.case.created_at }}"
-      service: "AWS"
+      service: "elastic-security"
       data:
         caseStatus: "{{ steps.fetch_case.output.case.status }}"
         caseSeverity: "{{ steps.fetch_case.output.case.severity }}"
@@ -282,7 +282,7 @@ steps:
         title: "{{ steps.fetch_case.output.case.title }}"
         description: "{{ steps.fetch_case.output.case.description }}"
         timestamp: "{{ steps.fetch_case.output.case.created_at }}"
-        service: "AWS"
+        service: "elastic-security"
         data:
           caseStatus: "{{ steps.fetch_case.output.case.status }}"
           caseSeverity: "{{ steps.fetch_case.output.case.severity }}"

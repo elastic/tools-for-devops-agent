@@ -281,7 +281,6 @@ steps:
         title: "{{ steps.fetch_case.output.case.title }}"
         description: "{{ steps.fetch_case.output.case.description }}"
         timestamp: "{{ steps.fetch_case.output.case.created_at }}"
-        service: "elastic-observability"
         data:
           caseStatus: "{{ steps.fetch_case.output.case.status }}"
           caseSeverity: "{{ steps.fetch_case.output.case.severity }}"

@@ -51,7 +51,7 @@ the check is useful without a cluster; one that only asks for setup is not.
 
 Every ES|QL query in this skill and in [references/query-recipes.md](references/query-recipes.md) runs via
 `platform.core.execute_esql`. Field-presence checks use `platform.core.get_index_mapping`. The
-[Operations](#operations) table maps each to its MCP tool.
+[Operations](#operations) table lists every operation this skill uses.
 
 ## Scope
 

@@ -43,7 +43,7 @@ degraded, and for the incident workflow itself, use the **elastic-sre-triage** s
 This skill reads Elastic through the Elastic Agent Builder MCP tools connected to AWS DevOps Agent: run ES|QL with
 `platform.core.execute_esql`, list indices and data streams with `platform.core.list_indices`, and read field mappings
 with `platform.core.get_index_mapping`. Operations below are written in HTTP-shorthand form (e.g., `POST /_query`); the
-[Operations](#operations) table maps each one to its tool. If no connected tool covers an operation, say what you would
+[Operations](#operations) table lists every operation this skill uses. If no connected tool covers an operation, say what you would
 check and why instead of calling the HTTP API another way.
 
 <!-- end-partial: preamble -->

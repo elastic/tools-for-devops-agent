@@ -34,8 +34,7 @@ Reliability instruments are not interchangeable. An SLO measures a user-visible 
 threshold rule fires on a raw condition; an anomaly job finds deviations where no fixed threshold exists; a synthetics
 monitor is the only one of the four that can see a service that has stopped emitting telemetry entirely. Choosing wrong
 produces alerts that are technically correct and operationally useless. For diagnosing a service that is already
-degraded, and for the incident workflow itself, use the **elastic-sre-triage** skill; for general rule lifecycle
-mechanics use the **kibana-alerting-rules** skill.
+degraded, and for the incident workflow itself, use the **elastic-sre-triage** skill.
 
 <!-- begin-partial: preamble -->
 
